@@ -3,7 +3,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 // Subject
-// import {} from "../index.js";
+import trace from "../index.js";
 
 //
 //
@@ -25,6 +25,10 @@ afterEach(() => {
 
 describe("The module", () => {
   describe("Index", () => {
-    it.todo("Works");
+    it("Works", () => {
+      expect(trace).not.toBeUndefined();
+      expect(trace).toBeObject();
+      expect(trace.install).toBeFunction();
+    });
   });
 });
