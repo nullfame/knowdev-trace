@@ -3,7 +3,17 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 // Subject
-import trace from "../index.js";
+import getBrowserId from "../getBrowserId.function.js";
+
+//
+//
+// Mock constants
+//
+
+//
+//
+// Mock modules
+//
 
 //
 //
@@ -23,13 +33,9 @@ afterEach(() => {
 // Run tests
 //
 
-describe("The module", () => {
-  describe("Index", () => {
-    it("Works", () => {
-      expect(trace).not.toBeUndefined();
-      expect(trace).toBeObject();
-      expect(trace.install).toBeFunction();
-      expect(trace.getBrowserId).toBeFunction();
-    });
+describe("GetBrowserId Function", () => {
+  it("Works", () => {
+    const response = getBrowserId();
+    expect(response).toBeBoolean();
   });
 });
