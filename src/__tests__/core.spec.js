@@ -3,7 +3,14 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 // Subject
-import { DEFAULT, getApp, getOptions, setApp, setOptions } from "../core.js";
+import {
+  DEFAULT,
+  getApp,
+  getCookieOptions,
+  getOptions,
+  setApp,
+  setOptions,
+} from "../core.js";
 
 //
 //
@@ -70,5 +77,28 @@ describe("Core", () => {
   it("Set options does not error if no options are passed", () => {
     const result = setOptions();
     expect(result).toBeBoolean();
+  });
+  it("getCookieOptions returns an object", () => {
+    const result = getOptions();
+    expect(result).not.toBeUndefined();
+    expect(result).toBeObject();
+  });
+  it.only("getCookieOptions only returns cookie options", () => {
+    const allOptions = {
+      cookieName: "MOCK_COOKIE_NAME",
+      domain: "MOCK_DOMAIN",
+      expires: "MOCK_EXPIRES",
+      path: "MOCK_PATH",
+      sameSite: "MOCK_SAME_SITE",
+    };
+    setOptions(allOptions);
+    expect(getOptions()).toEqual(allOptions);
+    expect(getCookieOptions()).not.toEqual(allOptions);
+    expect(getCookieOptions()).toEqual({
+      domain: "MOCK_DOMAIN",
+      expires: "MOCK_EXPIRES",
+      path: "MOCK_PATH",
+      sameSite: "MOCK_SAME_SITE",
+    });
   });
 });

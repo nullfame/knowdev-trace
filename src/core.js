@@ -13,7 +13,15 @@ export const DEFAULT = {
 //
 
 const coreOptions = {
+  // KnowDev Trace options
   cookieName: DEFAULT.COOKIE_NAME,
+
+  // VueCookies options
+  domain: undefined, // ""
+  expires: undefined, // "1d"
+  path: undefined, // "/"
+  sameSite: undefined, // "Lax"
+  secure: undefined, // ""
 };
 
 let vueApp = null;
@@ -24,6 +32,19 @@ let vueApp = null;
 //
 
 export const getApp = () => vueApp;
+
+export const getCookieOptions = () => {
+  const options = {};
+
+  if (coreOptions.domain) options.domain = coreOptions.domain;
+  if (coreOptions.expires) options.expires = coreOptions.expires;
+  if (coreOptions.path) options.path = coreOptions.path;
+  if (coreOptions.sameSite) options.sameSite = coreOptions.sameSite;
+  if (coreOptions.secure) options.secure = coreOptions.secure;
+
+  return options;
+};
+
 export const getOptions = () => coreOptions;
 
 export const setApp = (app) => {
