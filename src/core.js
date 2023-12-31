@@ -29,6 +29,9 @@ export const setApp = (app) => {
 };
 
 export const setOptions = (options) => {
+  if (!options) return false;
+  if (typeof options !== "object") return false;
+
   Object.keys(options).forEach((key) => {
     coreOptions[key] = options[key];
   });

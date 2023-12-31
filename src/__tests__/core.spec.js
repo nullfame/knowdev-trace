@@ -67,4 +67,8 @@ describe("Core", () => {
     expect(getOptions()).toBeObject();
     expect(getOptions().cookieName).toBe(newOptions.cookieName);
   });
+  it("Set options does not error if no options are passed", () => {
+    const result = setOptions();
+    expect(result).toBeBoolean();
+  });
 });
