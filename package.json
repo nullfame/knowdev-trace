@@ -13,6 +13,7 @@
     "format:package": "sort-package-json ./package.json",
     "lint": "eslint .",
     "test": "vitest .",
+    "test:spec:core": "vitest run ./src/__tests__/core.spec.js",
     "test:spec:index": "vitest run ./src/__tests__/index.spec.js",
     "test:spec:install.function": "vitest run ./src/__tests__/install.function.spec.js"
   },
