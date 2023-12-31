@@ -1,19 +1,14 @@
-//
-//
-// Constants
-//
-
-//
-//
-// Helper Functions
-//
+import { setApp, setOptions } from "./core.js";
 
 //
 //
 // Main
 //
 
-const install = () => true;
+// eslint-disable-next-line arrow-body-style
+const install = (app, options) => {
+  return setApp(app) && setOptions(options);
+};
 
 //
 //
