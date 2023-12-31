@@ -20,8 +20,11 @@ let vueApp = null;
 
 //
 //
-// Main
+// Exported Functions
 //
+
+export const getApp = () => vueApp;
+export const getOptions = () => coreOptions;
 
 export const setApp = (app) => {
   vueApp = app;
@@ -37,11 +40,3 @@ export const setOptions = (options) => {
   });
   return true;
 };
-
-//
-//
-// Export
-//
-
-export const getApp = () => vueApp;
-export const getOptions = () => coreOptions;
