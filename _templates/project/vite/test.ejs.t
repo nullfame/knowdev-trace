@@ -6,7 +6,7 @@ to: <%= path %>/__tests__/<%= name %><%= dotSubtype %>.spec.js
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 // Subject
-import <%= name %> from "../<%= name %><%= dotSubtype %>";
+import <%= name %> from "../<%= name %><%= dotSubtype %>.js";
 
 //
 //
