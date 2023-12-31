@@ -5,7 +5,8 @@
     "knowdev",
     "oidc",
     "postversion",
-    "roadmap"
+    "roadmap",
+    "uuidv4"
   ],
   "testing.automaticallyOpenPeekView": "never"
 }
