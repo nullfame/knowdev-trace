@@ -1,0 +1,32 @@
+{
+  "name": "@knowdev/trace",
+  "version": "0.0.1",
+  "description": "Browser tagging and tracking",
+  "license": "UNLICENSED",
+  "author": "Adam Finlayson",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "format": "npm run format:package && npm run format:lint",
+    "format:file": "eslint --fix",
+    "format:lint": "eslint --fix .",
+    "format:package": "sort-package-json ./package.json",
+    "lint": "eslint .",
+    "test": "vitest .",
+    "test:spec:index": "vitest run ./src/__tests__/index.spec.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.6.0",
+    "eslint-plugin-prettier": "^5.1.1",
+    "hygen": "^6.2.11",
+    "jest-extended": "^4.0.2",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "sort-package-json": "^2.6.0",
+    "vitest": "^1.1.0"
+  }
+}
