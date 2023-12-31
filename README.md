@@ -14,8 +14,6 @@ npm install --save @knowdev/trace
 
 #### src/plugins/trace.js
 
-
-
 ``` javascript
 import trace from "@knowdev/trace";
 
@@ -33,6 +31,35 @@ export default function (app) {
 }
 ```
 
+#### src/plugins/index.js
+
+``` javascript
+// ...
+import trace from "./trace";
+
+export function registerPlugins(app) {
+  // ...
+  app.use(trace);
+}
+```
+
+#### src/App.vue
+
+``` vue
+<script setup>
+import trace from "@knowdev/trace";
+import { onBeforeMount } from "vue";
+
+onBeforeMount(() => {
+  console.log("id :>> ", trace.getBrowserId());
+});
+</script>
+
+<template>
+  <router-view />
+</template>
+```
+
 ## 📖 Reference
 
 ## 📝 Changelog
@@ -44,7 +71,8 @@ export default function (app) {
 
 ## 🛣 Roadmap
 
-* 0.1.X - Server to ping
+* 0.1.X - Give browser id an advanced (infinite?) expiration
+* 0.1.Z - Server to ping
 * 0.2.0 - Send a trace ping to a server
 
 ### Wishlist 🌠
