@@ -83,7 +83,7 @@ describe("Core", () => {
     expect(result).not.toBeUndefined();
     expect(result).toBeObject();
   });
-  it.only("getCookieOptions only returns cookie options", () => {
+  it("getCookieOptions only returns cookie options", () => {
     const allOptions = {
       cookieName: "MOCK_COOKIE_NAME",
       domain: "MOCK_DOMAIN",
