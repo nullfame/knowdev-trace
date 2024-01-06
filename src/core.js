@@ -18,9 +18,9 @@ const coreOptions = {
 
   // VueCookies options
   domain: undefined, // ""
-  expires: undefined, // "1d"
+  expire: undefined, // "1d"
   path: undefined, // "/"
-  sameSite: undefined, // "Lax"
+  sameSite: undefined, // ""
   secure: undefined, // ""
 };
 
@@ -37,7 +37,7 @@ export const getCookieOptions = () => {
   const options = {};
 
   if (coreOptions.domain) options.domain = coreOptions.domain;
-  if (coreOptions.expires) options.expires = coreOptions.expires;
+  if (coreOptions.expire) options.expire = coreOptions.expires;
   if (coreOptions.path) options.path = coreOptions.path;
   if (coreOptions.sameSite) options.sameSite = coreOptions.sameSite;
   if (coreOptions.secure) options.secure = coreOptions.secure;
