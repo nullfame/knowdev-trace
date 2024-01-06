@@ -72,12 +72,11 @@ When the plugin is registered, when `app.use(trace)` is called, the object's ins
 | ---------- | ------- | ------- |
 | 12/31/2023 |   0.0.1 | First commit |
 | 12/31/2023 |   0.1.0 | Set and retrieve browser id cookie |
+|   1/5/2023 |   0.1.1 | Switch to vue-cookie-next |
 
 ## 🛣 Roadmap
 
-* 0.1.X - Switch to vue-cookie-next
 * 0.1.X - Give browser id an advanced (infinite?) expiration
-* 0.1.Z - Server to ping
 * 0.2.0 - Send a trace ping to a server
 
 ### Wishlist 🌠
