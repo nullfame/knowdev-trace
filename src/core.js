@@ -40,7 +40,7 @@ export const getCookieOptions = () => {
   const options = {};
 
   if (coreOptions.domain) options.domain = coreOptions.domain;
-  if (coreOptions.expire) options.expire = coreOptions.expires;
+  if (coreOptions.expire) options.expire = coreOptions.expire;
   if (coreOptions.path) options.path = coreOptions.path;
   if (coreOptions.sameSite) options.sameSite = coreOptions.sameSite;
   if (coreOptions.secure) options.secure = coreOptions.secure;
