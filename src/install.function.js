@@ -1,5 +1,5 @@
-import VueCookies from "vue-cookies";
-import { getCookieOptions, setApp, setOptions } from "./core.js";
+import { VueCookieNext } from "vue-cookie-next";
+import { getCookieOptions, init, setApp, setOptions } from "./core.js";
 
 //
 //
@@ -18,10 +18,12 @@ const install = (app, options) => {
   result.setApp = setApp(app);
   result.setOptions = setOptions(options);
 
-  // Install VueCookies
+  // Install vue-cookie-next
   try {
-    VueCookies.install(app, getCookieOptions());
+    VueCookieNext.install(app);
+    VueCookieNext.config(getCookieOptions());
     result.installVueCookies = true;
+    init();
   } catch (error) {
     result.installVueCookies = false;
   }

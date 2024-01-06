@@ -21,11 +21,11 @@ export default function (app) {
   app.use(trace, {
     // cookieName: "_kds-tr",
 
-    // Options from vue-cookies (defaults shown)
+    // Options from vue-cookie-next (defaults shown)
     // domain: ""
-    // expires: "1d"
+    // expire: "1d"
     // path: "/"
-    // sameSite: "Lax"
+    // sameSite: ""
     // secure: ""
   });
 }
@@ -75,6 +75,7 @@ When the plugin is registered, when `app.use(trace)` is called, the object's ins
 
 ## 🛣 Roadmap
 
+* 0.1.X - Switch to vue-cookie-next
 * 0.1.X - Give browser id an advanced (infinite?) expiration
 * 0.1.Z - Server to ping
 * 0.2.0 - Send a trace ping to a server

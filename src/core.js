@@ -1,3 +1,6 @@
+import { v4 as uuidv4 } from "uuid";
+import { VueCookieNext } from "vue-cookie-next";
+
 //
 //
 // Constants
@@ -18,9 +21,9 @@ const coreOptions = {
 
   // VueCookies options
   domain: undefined, // ""
-  expires: undefined, // "1d"
+  expire: undefined, // "1d"
   path: undefined, // "/"
-  sameSite: undefined, // "Lax"
+  sameSite: undefined, // ""
   secure: undefined, // ""
 };
 
@@ -37,7 +40,7 @@ export const getCookieOptions = () => {
   const options = {};
 
   if (coreOptions.domain) options.domain = coreOptions.domain;
-  if (coreOptions.expires) options.expires = coreOptions.expires;
+  if (coreOptions.expire) options.expire = coreOptions.expire;
   if (coreOptions.path) options.path = coreOptions.path;
   if (coreOptions.sameSite) options.sameSite = coreOptions.sameSite;
   if (coreOptions.secure) options.secure = coreOptions.secure;
@@ -46,6 +49,24 @@ export const getCookieOptions = () => {
 };
 
 export const getOptions = () => coreOptions;
+
+export const init = () => {
+  // Try/catch to prevent errors if VueCookieNext is not installed
+  try {
+    // See if a cookie is present
+    const browserId = VueCookieNext.getCookie(coreOptions.cookieName);
+    if (browserId) return browserId;
+
+    // If not, generate a new uuid
+    const newBrowserId = uuidv4();
+
+    // Save it as a cookie
+    VueCookieNext.setCookie(coreOptions.cookieName, newBrowserId);
+    return newBrowserId;
+  } catch (error) {
+    return false;
+  }
+};
 
 export const setApp = (app) => {
   vueApp = app;

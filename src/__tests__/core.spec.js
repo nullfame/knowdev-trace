@@ -87,7 +87,7 @@ describe("Core", () => {
     const allOptions = {
       cookieName: "MOCK_COOKIE_NAME",
       domain: "MOCK_DOMAIN",
-      expires: "MOCK_EXPIRES",
+      expire: "MOCK_EXPIRE",
       path: "MOCK_PATH",
       sameSite: "MOCK_SAME_SITE",
     };
@@ -96,7 +96,7 @@ describe("Core", () => {
     expect(getCookieOptions()).not.toEqual(allOptions);
     expect(getCookieOptions()).toEqual({
       domain: "MOCK_DOMAIN",
-      expires: "MOCK_EXPIRES",
+      expire: "MOCK_EXPIRE",
       path: "MOCK_PATH",
       sameSite: "MOCK_SAME_SITE",
     });
