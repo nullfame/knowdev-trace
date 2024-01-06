@@ -19,9 +19,9 @@ const coreOptions = {
   // KnowDev Trace options
   cookieName: DEFAULT.COOKIE_NAME,
 
-  // VueCookies options
+  // vue-cookies-next options
   domain: undefined, // ""
-  expire: undefined, // "1d"
+  expire: "395d", // was: "1d"
   path: undefined, // "/"
   sameSite: undefined, // ""
   secure: undefined, // ""

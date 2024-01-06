@@ -23,7 +23,7 @@ export default function (app) {
 
     // Options from vue-cookie-next (defaults shown)
     // domain: ""
-    // expire: "1d"
+    // expire: "395d"
     // path: "/"
     // sameSite: ""
     // secure: ""
@@ -80,6 +80,10 @@ When the plugin is registered, when `app.use(trace)` is called, the object's ins
 * 0.2.0 - Send a trace ping to a server
 
 ### Wishlist 🌠
+
+## 📎 Footnotes
+
+Why `395d`? It it closer to the recommended maximum (400d) but easier to spot the day it was generated since it will be 13 months-ish.
 
 ## 📜 License
 
