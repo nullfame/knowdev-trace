@@ -15,6 +15,14 @@ import getBrowserId from "../getBrowserId.function.js";
 // Mock modules
 //
 
+vi.mock("vue-cookie-next", () => ({
+  VueCookieNext: {
+    getCookie: vi.fn().mockReturnValue("MOCKED_COOKIE_VALUE"),
+    setCookie: vi.fn(),
+    removeCookie: vi.fn(),
+  },
+}));
+
 //
 //
 // Mock environment
@@ -36,6 +44,6 @@ afterEach(() => {
 describe("GetBrowserId Function", () => {
   it("Works", () => {
     const response = getBrowserId();
-    expect(response).toBeBoolean();
+    expect(response).toBeString();
   });
 });
