@@ -62,6 +62,10 @@ onBeforeMount(() => {
 
 ## 📖 Reference
 
+## 💻 Development
+
+When the plugin is registered, when `app.use(trace)` is called, the object's install method is called. That is `src/install.function.js`.
+
 ## 📝 Changelog
 
 | Date       | Version | Summary |
