@@ -1,5 +1,5 @@
-import { v4 as uuidv4 } from "uuid";
-import { getApp, getOptions } from "../core.js";
+import { VueCookieNext } from "vue-cookie-next";
+import { getOptions, init } from "../core.js";
 
 //
 //
@@ -17,26 +17,10 @@ import { getApp, getOptions } from "../core.js";
 //
 
 const getBrowserId = () => {
-  const app = getApp();
-  if (!app) return false;
-  const cookies = app.$cookies;
-  if (!cookies) return false;
-
-  const options = getOptions();
-  const { cookieName } = options;
-
-  if (cookies) {
-    // See if a cookie is present
-    const browserId = cookies.get(cookieName);
-    if (browserId) return browserId;
-    // If not, generate a new uuid
-    const newBrowserId = uuidv4();
-    // Save it as a cookie
-    app.$cookies.set(cookieName, newBrowserId);
-    return newBrowserId;
-  }
-
-  return false;
+  const { cookieName } = getOptions();
+  const browserId = VueCookieNext.getCookie(cookieName);
+  if (browserId) return browserId;
+  return init();
 };
 
 //
