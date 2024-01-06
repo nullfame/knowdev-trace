@@ -1,3 +1,6 @@
+import { v4 as uuidv4 } from "uuid";
+import { VueCookieNext } from "vue-cookie-next";
+
 //
 //
 // Constants
@@ -46,6 +49,24 @@ export const getCookieOptions = () => {
 };
 
 export const getOptions = () => coreOptions;
+
+export const init = () => {
+  // Try/catch to prevent errors if VueCookieNext is not installed
+  try {
+    // See if a cookie is present
+    const browserId = VueCookieNext.getCookie(coreOptions.cookieName);
+    if (browserId) return browserId;
+
+    // If not, generate a new uuid
+    const newBrowserId = uuidv4();
+
+    // Save it as a cookie
+    VueCookieNext.setCookie(coreOptions.cookieName, newBrowserId);
+    return newBrowserId;
+  } catch (error) {
+    return false;
+  }
+};
 
 export const setApp = (app) => {
   vueApp = app;
